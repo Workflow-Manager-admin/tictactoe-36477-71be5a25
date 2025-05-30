@@ -2,9 +2,17 @@
 > svelte@0.0.1 dev
 > vite dev --host 0.0.0.0 --cors --port 3000
 
-12:38:58 PM [vite] (client) Forced re-optimization of dependencies
-
-  VITE v6.2.1  ready in 944 ms
-
-  ➜  Local:   http://localhost:3000/
-  ➜  Network: http://172.17.0.2:3000/
+error when starting dev server:
+Error: Port 3000 is already in use
+    at Server.onError (file:///home/kavia/workspace/code-generation/tictactoe-36477-71be5a25/tic_tac_toe/node_mo12:58:47 PM [vite] (client) ✨ new dependencies optimized: clsx
+12:58:47 PM [vite] (client) ✨ optimized dependencies changed. reloading
+1:01:26 PM [vite] (client) hmr update /src/routes/+page.svelte, /src/routes/+page.svelte?svelte&type=style&lang.css
+1:01:26 PM [vite] (ssr) page reload src/routes/+page.svelte
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+1:01:31 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/root.js
+1:01:31 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+1:01:31 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
