@@ -5,11 +5,6 @@
 	 * Implements a 3x3 board, local two-player, win/draw detection, restart functionality, and a light, center-aligned layout.
 	 */
 
-	// Theme colors as variables for maintainability
-	const primary = "#ffffff";
-	const secondary = "#000000";
-	const accent = "#2196f3";
-
 	// Represents the board state (3x3 grid, initialized to nulls)
 	let board = [
 		[null, null, null],
@@ -76,6 +71,7 @@
 	function restartGame() {
 		board = [
 			[null, null, null],
+			[null, null, null],
 			[null, null, null]
 		];
 		currentPlayer = "X";
@@ -86,11 +82,17 @@
 </script>
 
 <style>
+	:root {
+		--primary: #ffffff;
+		--secondary: #000000;
+		--accent: #2196f3;
+	}
+
 	:global(body) {
 		margin: 0;
 		padding: 0;
-		background: {primary};
-		color: {secondary};
+		background: var(--primary);
+		color: var(--secondary);
 		font-family: system-ui, sans-serif;
 	}
 	.app-container {
@@ -99,10 +101,10 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 100vh;
-		background: {primary};
+		background: var(--primary);
 	}
 	.tictactoe-title {
-		color: {accent};
+		color: var(--accent);
 		letter-spacing: 2px;
 		font-weight: 700;
 		margin-bottom: 1rem;
@@ -113,7 +115,7 @@
 		grid-template-columns: repeat(3, 70px);
 		grid-template-rows: repeat(3, 70px);
 		gap: 10px;
-		background: {secondary}10;
+		background: #00000010;
 		padding: 18px 18px 8px 18px;
 		border-radius: 18px;
 		box-shadow: 0 4px 18px #00000018;
@@ -127,11 +129,11 @@
 		justify-content: center;
 		font-size: 2.5rem;
 		font-weight: 600;
-		background: {primary};
-		border: 2px solid {accent};
+		background: var(--primary);
+		border: 2px solid var(--accent);
 		border-radius: 8px;
 		cursor: pointer;
-		color: {secondary};
+		color: var(--secondary);
 		transition: background 0.12s, border-color 0.15s;
 		user-select: none;
 	}
@@ -150,12 +152,12 @@
 	.status {
 		font-size: 1.2rem;
 		font-weight: 500;
-		color: {secondary};
+		color: var(--secondary);
 		margin-bottom: 0.25rem;
 	}
 
 	.restart-btn {
-		background: {accent};
+		background: var(--accent);
 		color: #fff;
 		border: none;
 		border-radius: 5px;
@@ -176,8 +178,8 @@
 <div class="app-container">
 	<h1 class="tictactoe-title">TicTacToe</h1>
 	<div class="board">
-		{#each board as row, i}
-			{#each row as cell, j}
+		{#each board as row, i (i)}
+			{#each row as cell, j (j)}
 				<button
 					class="cell {cell || !gameActive ? 'disabled' : ''}"
 					on:click={() => handleCellClick(i, j)}
@@ -191,11 +193,11 @@
 	<div class="control-panel">
 		<div class="status">
 			{#if winner}
-				<span style="color: {accent}; font-weight: 700;">{winner}</span> wins!
+				<span style="color: var(--accent); font-weight: 700;">{winner}</span> wins!
 			{:else if draw}
 				It's a <span style="font-weight: 700;">draw!</span>
 			{:else}
-				Current turn: <span style="color: {accent}; font-weight: 700;">{currentPlayer}</span>
+				Current turn: <span style="color: var(--accent); font-weight: 700;">{currentPlayer}</span>
 			{/if}
 		</div>
 		<button class="restart-btn" type="button" on:click={restartGame}>Restart Game</button>
