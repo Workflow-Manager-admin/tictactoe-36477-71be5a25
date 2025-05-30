@@ -20,3 +20,11 @@ Error: Port 3000 is already in use
 1:01:40 PM [vite] (ssr) page reload src/routes/+page.svelte
 1:01:47 PM [vite] (client) hmr update /src/routes/+page.svelte
 1:01:47 PM [vite] (ssr) page reload src/routes/+page.svelte
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+1:01:52 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/root.js
+1:01:52 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+1:01:52 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
