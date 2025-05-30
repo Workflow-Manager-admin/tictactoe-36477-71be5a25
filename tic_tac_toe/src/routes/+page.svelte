@@ -240,19 +240,7 @@
 	}
 
 	// -------------------------------------------------------
-	// Reactivity triggers AI to move after human in AI mode
 	// All UI control changes handled in control panel below
-
-	$: if (
-		mode === "ai" &&
-		gameActive &&
-		currentPlayer !== playerSymbol &&
-		!aiThinking &&
-		!winner &&
-		!draw
-	) {
-		maybeTriggerAIMove();
-	}
 
 	// When switching to 2p or AI mode, restart cleanly
 	function handleModeChange(newMode) {
@@ -410,13 +398,13 @@
 	</div>
 	<div class="control-panel">
 		<div class="mode-group" aria-label="Game mode">
-			<label>Mode:</label>
+			<span>Mode:</span>
 			<button class="mode-btn {mode == '2p' ? 'selected' : ''}" on:click={() => handleModeChange('2p')}>2-Player</button>
 			<button class="mode-btn {mode == 'ai' ? 'selected' : ''}" on:click={() => handleModeChange('ai')}>Vs Computer</button>
 		</div>
 		{#if mode === "ai"}
 			<div class="difficulty-group" aria-label="AI difficulty">
-				<label>AI:</label>
+				<span>AI:</span>
 				<button class="difficulty-btn {aiLevel == 'easy' ? 'selected' : ''}" on:click={() => handleAIDifficultyChange('easy')}>Easy</button>
 				<button class="difficulty-btn {aiLevel == 'medium' ? 'selected' : ''}" on:click={() => handleAIDifficultyChange('medium')}>Medium</button>
 				<button class="difficulty-btn {aiLevel == 'hard' ? 'selected' : ''}" on:click={() => handleAIDifficultyChange('hard')}>Hard</button>
